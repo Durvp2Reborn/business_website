@@ -35,7 +35,7 @@ export function NavBar() {
     <>
       <header className="app-navbar">
         <div className="nav-inner">
-          <a className="store-link" href="/">
+          <a className="store-link" href="/public">
             <img src={logo} alt="The Sweet Garden" className="store-logo" />
           </a>
 
