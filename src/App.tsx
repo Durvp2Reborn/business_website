@@ -20,11 +20,12 @@ const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 export function NavBar() {
     return (<>
         <div>
-
+            <img src="Logo.png" alt="Italian Trulli"/>
         </div>
         <Outlet/>
-        </>);
+    </>);
 }
+
 function MenuIcon() {
     return null;
 }
