@@ -1,0 +1,319 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+:root {
+  /* Primary palette */
+  --color-primary: #4A6B52; /* Sage/Forest Green */
+  --color-dusty-rose: #B88391; /* Dusty Rose/Mauve */
+  --color-soft-pink: #E8C5CC; /* Soft Pink */
+  --color-cream: #F5EFE7; /* Cream/Off-White */
+  --color-burgundy: #8B5B68; /* Burgundy/Deep Rose */
+
+  /* Muted / accents */
+  --color-muted-olive: #567556;
+  --color-muted-mauve: #C49BA6;
+  --color-pale-blush: #F0D5DA;
+  --color-ivory: #FFFEF9;
+  --color-muted-rose: #9D6B76;
+  --color-gray-green: #A8B5A1;
+  --color-sage-gray: #C4CEC0;
+  --color-warm-beige: #D4C4B0;
+  --color-soft-gray: #8B9087;
+
+  /* Text */
+  --text-primary: #222;
+  --text-muted: var(--color-soft-gray);
+  --bg: var(--color-ivory);
+}
+
+html,body { background: var(--bg); color: var(--text-primary); }
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+/* App layout */
+.app-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1200;
+  /* ensure the bar spans the full width and has squared corners */
+  border-radius: 0 !important;
+}
+
+.app-toolbar-spacer {
+  height: 64px; /* matches typical MUI toolbar height */
+}
+
+.app-main {
+  padding-top: 1.5rem;
+}
+
+/* Home / header */
+.home-header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+/* Products */
+.products-container {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+.product-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.product-media {
+  height: 200px;
+  object-fit: cover;
+}
+.product-content {
+  flex: 1 1 auto;
+}
+.product-price {
+  margin-top: 0.5rem;
+  color: var(--color-burgundy);
+  font-weight: 600;
+}
+.product-action {
+  width: 100%;
+}
+
+/* style contained buttons globally to match palette (MUI will still apply its own classes) */
+button.MuiButton-contained {
+  background-color: var(--color-primary) !important;
+  color: var(--color-cream) !important;
+}
+button.MuiButton-contained:hover {
+  background-color: var(--color-muted-olive) !important;
+}
+
+/* Cart */
+.cart-container {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+.cart-item-media {
+  width: 100%;
+  max-width: 100px;
+}
+
+.cart-item-media { border-radius: 6px; }
+
+/* Team */
+.team-container {
+  padding-top: 2rem;
+  padding-bottom: 3rem;
+}
+.team-card-media {
+  height: 300px;
+  object-fit: cover;
+}
+
+.team-grid { margin-top: 1rem; }
+
+/* Utility */
+.center-text { text-align: center; }
+
+/* Color palette variables (provided) */
+:root {
+  --color-sage: #4A6B52; /* Primary */
+  --color-dusty-rose: #B88391; /* Secondary */
+  --color-soft-pink: #E8C5CC;
+  --color-cream: #F5EFE7;
+  --color-burgundy: #8B5B68;
+
+  --color-muted-olive: #567556;
+  --color-muted-mauve: #C49BA6;
+  --color-pale-blush: #F0D5DA;
+  --color-ivory: #FFFEF9;
+  --color-muted-rose: #9D6B76;
+  --color-gray-green: #A8B5A1;
+  --color-sage-gray: #C4CEC0;
+  --color-warm-beige: #D4C4B0;
+  --color-soft-gray: #8B9087;
+
+  /* semantic tokens */
+  --bg: var(--color-ivory);
+  --surface: var(--color-cream);
+  --text: #2b2b2b;
+  --muted: var(--color-soft-gray);
+  --accent: var(--color-dusty-rose);
+  --primary: var(--color-sage);
+  --danger: #d9534f;
+}
+
+/* global background + text */
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+/* App surface */
+#root {
+  background: transparent;
+  padding: 1rem;
+}
+
+/* Navbar */
+.app-navbar {
+  background: linear-gradient(90deg, var(--primary), var(--color-muted-olive));
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  /* Make sure the AppBar background overrides any MUI defaults */
+  background-color: var(--primary) !important;
+  background-image: linear-gradient(90deg, var(--primary), var(--color-muted-olive)) !important;
+  border-radius: 0 !important;
+}
+.app-navbar .store-link {
+  color: var(--color-ivory);
+  font-size: 1.1rem;
+}
+.nav-button,
+.app-navbar .nav-button {
+  color: var(--color-ivory);
+  padding: 8px 12px;
+  border-radius: 6px;
+  text-decoration: none;
+}
+.nav-button:hover { background: rgba(255,255,255,0.06); }
+
+/* Home header */
+.home-header h1, .home-header h2, .home-header h3 {
+  color: var(--primary);
+}
+.home-header .MuiButton-contained, .product-action .MuiButton-contained {
+  background: var(--accent);
+  color: var(--color-ivory);
+}
+.home-header .MuiButton-contained:hover, .product-action .MuiButton-contained:hover {
+  background: var(--color-muted-mauve);
+}
+
+/* Products */
+.products-container { padding-top: 2.5rem; padding-bottom: 2.5rem; }
+.product-card { background: var(--surface); border-radius: 8px; overflow: hidden; }
+.product-media { background: linear-gradient(180deg, var(--color-soft-pink), var(--color-pale-blush)); }
+.product-content { padding: 1rem; }
+.product-price { color: var(--color-burgundy); font-weight: 700; }
+.product-action .MuiButton-contained { background: var(--accent); color: var(--color-ivory); }
+.product-action .MuiButton-contained:hover { background: var(--color-muted-mauve); }
+
+/* Cart */
+.cart-container { padding-top: 2rem; padding-bottom: 2rem; }
+.cart-item-media { width: 100%; max-width: 100px; border-radius: 6px; }
+.cart-total { text-align: right; margin-top: 1rem; color: var(--primary); font-weight: 700; }
+
+/* Team */
+.team-container { background: linear-gradient(180deg, var(--color-warm-beige), var(--color-sage-gray)); padding: 2rem; border-radius: 8px; }
+.team-card-media { object-fit: cover; }
+
+/* Utility tweaks */
+.center-text { text-align: center; }
+
+/* MUI overrides: contained buttons */
+.MuiButton-containedPrimary { background-color: var(--primary); color: var(--color-ivory); }
+.MuiButton-containedPrimary:hover { background-color: var(--color-muted-olive); }
+
+
+.cart-total { text-align: right; margin-top: 1rem; }
+
+/* Navbar specifics */
+.app-navbar .MuiContainer-root {
+  padding-left: 16px;
+  padding-right: 16px;
+  /* Keep the inner container transparent so the AppBar background is continuous
+     (prevents a differently-colored block showing through at the corners). */
+  background: transparent !important;
+}
+.app-navbar a.store-link {
+  font-family: monospace;
+  font-weight: 700;
+  letter-spacing: .3rem;
+  color: var(--color-cream);
+  text-decoration: none;
+}
+.app-navbar .store-link { padding: 0; }
+.store-logo { height: 48px; width: auto; display: block; background: transparent; }
+.store-logo[alt] { background: transparent; }
+.app-navbar .nav-button {
+  margin: 8px 0;
+  color: var(--color-cream);
+  display: inline-block;
+  padding: 8px 12px;
+  border-radius: 6px;
+}
+.app-navbar .nav-button:hover {
+  background: rgba(255,255,255,0.06);
+  color: var(--color-soft-pink);
+}
+
+/* Responsive adjustments: show navbar title always */
+@media (max-width: 600px) {
+  .app-toolbar-spacer { height: 56px; }
+}
+
+.nav-spacer { flex: 1; }
+.nav-links { display: flex; gap: 8px; align-items: center; }
+
+/* Company sections added below home page */
+.company-section { margin-top: 2.5rem; padding: 2rem 0; }
+.mission-statement { background: linear-gradient(90deg, rgba(74,107,82,0.06), rgba(184,131,145,0.02)); padding: 1rem 0; border-radius: 8px; margin-bottom: 1rem; }
+.company-desc { margin-bottom: 1.25rem; }
+.leadership-grid { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 0.75rem; }
+.leader-card { flex: 1 1 220px; background: var(--surface); padding: 0.875rem; border-radius: 8px; box-shadow: 0 1px 4px rgba(0,0,0,0.04); }
+.product-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; margin-top: 0.75rem; }
+.product-offer { background: var(--surface); padding: 0.875rem; border-radius: 8px; }
+.about-us { margin-top: 1.25rem; }
+.values-list { margin-left: 1rem; margin-top: 0.5rem; }
+
+/* small responsive tweaks for company sections */
+@media (max-width: 800px) {
+  .leadership-grid { flex-direction: column; }
+}
+
+/* Team placeholder */
+.team-space { padding: 2rem 0; }
+.team-space-container { text-align: center; }
+.team-placeholder img { max-width: 100%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.06); margin-bottom: 0.75rem; }
+.team-placeholder p, .team-placeholder .MuiTypography-root { color: var(--muted); }
