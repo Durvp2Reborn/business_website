@@ -2,8 +2,8 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import { HashRouter, Route, Routes } from 'react-router'
 import App, { NavBar } from "./App.tsx"
-import Products from './pages/Products'
-import Cart from './pages/Cart'
+import Products from './pages/Products.tsx'
+import Cart from './pages/Cart.tsx'
 
 
 createRoot(document.getElementById('root')!).render(
