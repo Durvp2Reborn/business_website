@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Outlet, Link } from 'react-router-dom';
-import logo from './assets/Screenshot 2025-11-11 213649.png';
+import logo from '../Screenshot 2025-11-11 213649.png';
 import './index.css';
 
 const pages = ['Products', 'Cart'];
@@ -8,8 +8,7 @@ const pages = ['Products', 'Cart'];
 export function NavBar() {
   const [isNavOpen, setIsNavOpen] = React.useState(false);
 
-  // Local cart state (simple, clearly-named JS helpers)
-  // type Product = { id: number; name: string; price: number; description: string; image: string; };
+
   const [cart, setCart] = React.useState<any[]>([]);
 
   function addItemToCart(product: any) {

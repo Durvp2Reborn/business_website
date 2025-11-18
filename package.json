@@ -18,6 +18,7 @@
     "react-router": "^7.0.1",
     "react-router-dom": "^7.0.1"
   },
+  "homepage": "https://Durvp2Reborn.github.io/business_website/",
   "devDependencies": {
     "@eslint/js": "^9.36.0",
     "@types/node": "^24.6.0",
