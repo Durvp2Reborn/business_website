@@ -8,7 +8,7 @@ const products = [
     price: 1200.0,
     description:
       'Custom multi-tier wedding cake available in flavors like vanilla bean, chocolate ganache, lemon lavender, red velvet, and champagne sponge. Hand-piped finishes, edible flowers, gold leaf accents, and custom sugar work available.',
-    image: 'https://via.placeholder.com/400x300?text=Signature+Wedding+Cake',
+
   },
   {
     id: 102,
@@ -16,7 +16,7 @@ const products = [
     price: 250.0,
     description:
       'Luxurious centerpieces in signature styles: Romantic Garden, Modern Minimalist, and Vintage Elegance. Seasonally-sourced sustainable blooms arranged in premium vessels.',
-    image: 'https://via.placeholder.com/400x300?text=Garden+Centerpiece',
+
   },
   {
     id: 103,
@@ -24,7 +24,7 @@ const products = [
     price: 450.0,
     description:
       'Gourmet grazing table with artisanal cheeses, cured meats, seasonal fruits, honeycomb, nuts, olives, and crackers. Available in multiple sizes for events.',
-    image: 'https://via.placeholder.com/400x300?text=Charcuterie+Table',
+
   },
 ];
 

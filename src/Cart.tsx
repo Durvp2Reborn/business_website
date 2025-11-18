@@ -1,11 +1,9 @@
-import { useOutletContext } from 'react-router-dom';
+
 
 function Cart() {
-  const { cart, removeItemFromCart, getCartTotal } = useOutletContext<any>();
 
-  function handleRemoveItem(id: any) {
-    removeItemFromCart(id);
-  }
+
+
 
   return (
     <div className="cart-container">
