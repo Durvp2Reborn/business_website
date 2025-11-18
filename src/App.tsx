@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Outlet } from 'react-router';
+import { Outlet, Link } from 'react-router-dom';
 import logo from './assets/Screenshot 2025-11-11 213649.png';
 import './index.css';
 
@@ -35,9 +35,9 @@ export function NavBar() {
     <>
       <header className="app-navbar">
         <div className="nav-inner">
-          <a className="store-link" href="/public">
+          <Link className="store-link" to="/">
             <img src={logo} alt="The Sweet Garden" className="store-logo" />
-          </a>
+          </Link>
 
           <div className="nav-spacer" />
 
@@ -51,7 +51,7 @@ export function NavBar() {
                 {pages.map(function(page) {
                   return (
                     <li key={page} onClick={closeNav}>
-                      <a href={`/${page.toLowerCase()}`}>{page}</a>
+                      <Link to={`/${page.toLowerCase()}`}>{page}</Link>
                     </li>
                   );
                 })}
@@ -62,9 +62,9 @@ export function NavBar() {
           <nav className="nav-links">
             {pages.map(function(page) {
               return (
-                <a key={page} className="nav-button" href={`/${page.toLowerCase()}`}>
+                <Link key={page} className="nav-button" to={`/${page.toLowerCase()}`}>
                   {page}
-                </a>
+                </Link>
               );
             })}
           </nav>
@@ -86,7 +86,7 @@ function App() {
       <div className="home-header">
         <h1>Welcome to The Sweet Garden</h1>
         <h2 className="subtitle">Discover our stress-free, sustainable event planning & curated products</h2>
-  <a className="product-action" href="/products">Shop Now</a>
+  <Link className="product-action" to="/products">Shop Now</Link>
       </div>
 
       <div className="company-section">

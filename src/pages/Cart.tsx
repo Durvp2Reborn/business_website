@@ -1,4 +1,4 @@
-import { useOutletContext } from 'react-router';
+import { useOutletContext } from 'react-router-dom';
 
 function Cart() {
   const { cart, removeItemFromCart, getCartTotal } = useOutletContext<any>();
@@ -26,9 +26,6 @@ function Cart() {
                     <p className="muted">{item.description}</p>
                   </div>
                   <div className="cart-item-price">${item.price.toFixed(2)}</div>
-                  <div className="cart-item-actions">
-                    <button className="btn-outline" onClick={function() { handleRemoveItem(item.id); }}>Remove</button>
-                  </div>
                 </div>
               );
             })}
