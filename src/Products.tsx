@@ -33,9 +33,13 @@ function Products() {
     if(stored){
       items = JSON.parse(stored);
     }
+
+
     items.push(product);
     localStorage.setItem('stored', JSON.stringify(items));
   }
+
+
 
   return (
     <div className="products-container">

@@ -1,12 +1,9 @@
 import './App.css'
-import { useNavigate, Link} from 'react-router';
+import {useNavigate, Link, Outlet} from 'react-router';
 
 import './index.css';
 
 export function NavBar() {
-
-
-
     const navigate = useNavigate();
 
     const handleGoToHome = () => {
@@ -20,11 +17,14 @@ export function NavBar() {
   };
 
     return (
+        <>
         <div>
           <button onClick={handleGoToHome}>Go to Home</button>
           <button onClick={handleGoToProducts}>Go to Products</button>
           <button onClick={handleGoToCart}>Go to Cart</button>
         </div>
+        <Outlet/>
+        </>
     );
 }
 
