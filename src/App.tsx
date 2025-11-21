@@ -1,82 +1,31 @@
-import * as React from 'react';
-import { Outlet, Link } from 'react-router-dom';
-import logo from '../Screenshot 2025-11-11 213649.png';
+import './App.css'
+import { useNavigate, Link} from 'react-router';
+
 import './index.css';
 
-const pages = ['Products', 'Cart'];
-
 export function NavBar() {
-  const [isNavOpen, setIsNavOpen] = React.useState(false);
 
 
-  const [cart, setCart] = React.useState<any[]>([]);
 
-  function addItemToCart(product: any) {
-    setCart(function(prev: any[]) { return [...prev, product]; });
-  }
+    const navigate = useNavigate();
 
-  function removeItemFromCart(productId: any) {
-    setCart(function(prev: any[]) { return prev.filter(function(p: any) { return p.id !== productId; }); });
-  }
+    const handleGoToHome = () => {
+      navigate('/');
+    };
+  const handleGoToProducts = () => {
+    navigate('/Products');
+  };
+  const handleGoToCart = () => {
+    navigate('/Cart');
+  };
 
-  function getCartTotal() {
-    return cart.reduce(function(total: number, item: any) { return total + (item.price || 0); }, 0);
-  }
-
-  function toggleNav() {
-    setIsNavOpen(function(v) { return !v; });
-  }
-  function closeNav() {
-    setIsNavOpen(false);
-  }
-
-  return (
-    <>
-      <header className="app-navbar">
-        <div className="nav-inner">
-          <Link className="store-link" to="/">
-            <img src={logo} alt="The Sweet Garden" className="store-logo" />
-          </Link>
-
-          <div className="nav-spacer" />
-
-          <button className="menu-toggle" aria-label="menu" onClick={toggleNav}>
-            ☰
-          </button>
-
-          {isNavOpen && (
-            <nav className="mobile-menu">
-              <ul>
-                {pages.map(function(page) {
-                  return (
-                    <li key={page} onClick={closeNav}>
-                      <Link to={`/${page.toLowerCase()}`}>{page}</Link>
-                    </li>
-                  );
-                })}
-              </ul>
-            </nav>
-          )}
-
-          <nav className="nav-links">
-            {pages.map(function(page) {
-              return (
-                <Link key={page} className="nav-button" to={`/${page.toLowerCase()}`}>
-                  {page}
-                </Link>
-              );
-            })}
-          </nav>
+    return (
+        <div>
+          <button onClick={handleGoToHome}>Go to Home</button>
+          <button onClick={handleGoToProducts}>Go to Products</button>
+          <button onClick={handleGoToCart}>Go to Cart</button>
         </div>
-      </header>
-      <div className="app-toolbar-spacer" />
-      <main className="app-main">
-        <div className="container-lg">
-          <Outlet context={{ cart, addItemToCart, removeItemFromCart, getCartTotal }} />
-        </div>
-      </main>
-    </>
-  );
+    );
 }
 
 function App() {
@@ -85,7 +34,7 @@ function App() {
       <div className="home-header">
         <h1>Welcome to The Sweet Garden</h1>
         <h2 className="subtitle">Discover our stress-free, sustainable event planning & curated products</h2>
-  <Link className="product-action" to="/products">Shop Now</Link>
+        <Link className="product-action" to="/src/Products">Shop Now</Link>
       </div>
 
       <div className="company-section">

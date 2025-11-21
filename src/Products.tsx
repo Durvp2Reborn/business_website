@@ -1,6 +1,3 @@
-
-import { useOutletContext } from 'react-router-dom';
-
 const products = [
   {
     id: 101,
@@ -29,10 +26,15 @@ const products = [
 ];
 
 function Products() {
-  const { addItemToCart } = useOutletContext<any>();
 
-  function handleAddToCart(product: any) {
-    addItemToCart(product);
+  function handleAddToCart(product: { id:number, name:string, price:number, description:string }) {
+    let items = [];
+    const stored = localStorage.getItem('stored');
+    if(stored){
+      items = JSON.parse(stored);
+    }
+    items.push(product);
+    localStorage.setItem('stored', JSON.stringify(items));
   }
 
   return (
@@ -40,10 +42,8 @@ function Products() {
       <h1>Our Products</h1>
 
       <div className="products-grid">
-        {products.map(function(product: any) {
-          return (
-            <div className="product-card" key={product.id}>
-              <img className="product-media" src={product.image} alt={product.name} />
+        {products.map(product =>  <div className="product-card" key={product.id}>
+              {/*<img className="product-media" src={product.image} alt={product.name} />*/}
               <div className="product-content">
                 <h2>{product.name}</h2>
                 <p className="product-desc">{product.description}</p>
@@ -52,9 +52,8 @@ function Products() {
               <div className="product-action">
                 <button onClick={function() { handleAddToCart(product); }} className="btn-primary">Add to cart</button>
               </div>
-            </div>
-          );
-        })}
+            </div>)
+        }
       </div>
     </div>
   );

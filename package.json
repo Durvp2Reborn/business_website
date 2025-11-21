@@ -10,15 +10,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@emotion/react": "^11.14.0",
-    "@mui/icons-material": "^7.3.5",
-    "@mui/material": "^7.3.5",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
-    "react-router": "^7.0.1",
-    "react-router-dom": "^7.0.1"
+    "react-router": "^7.0.1"
   },
-  "homepage": "https://github.com/Durvp2Reborn/business_website.git",
+  "homepage": "https://Durvp2Reborn.github.io/business_website/",
   "devDependencies": {
     "@eslint/js": "^9.36.0",
     "@types/node": "^24.6.0",
